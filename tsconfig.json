@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": ["es2022"],
+    "module": "CommonJS",
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "outDir": "build",
+    "baseUrl": "./",
+    "rootDir": "src",
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "typeRoots": [ "./src/@types","./node_modules/@types"],
+  },
+  "exclude": [
+    "build",
+    "node_modules/"
+  ]
+}
