@@ -9,9 +9,16 @@ fi
 
 pushd "$1"
 
-for im in $(ls -v *.svg); do
-  ## sending all in one job was failing (too big?) prints each one separately
-  rsvg-convert $im | lp
+# for each svg or png file
+for im in *.svg *.png; do
+  if [ ! -f "$im" ]; then
+    continue
+  fi
+  if [[ $im == *.svg ]]; then
+    rsvg-convert $im | lp
+  else
+    lp $im
+  fi
 done
 
 popd

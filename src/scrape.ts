@@ -5,7 +5,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 puppeteer.use(StealthPlugin());
-const scoreRegex = /\/(score_\d+.svg)\?/;
+
+const scoreRegex = /(score_\d+(\.png|\.svg))(?![@]\d+x\d+)/
 
 export async function scrape(musescoreUrl: string, name: string, headless: false | 'new' = 'new') {
   const browser = await puppeteer.launch({
